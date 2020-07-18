@@ -7,6 +7,7 @@
       :colHeaders="['Semester', 'Course ID', 'Course Title', 'Credit', 'Grade']"
       :columns="[{data: 'semester', readOnly: true}, {data: 'courseId', readOnly: true}, {data: 'courseTitle', readOnly: true}, {data: 'courseCredit', readOnly: true}, {data: 'courseGrade', validator: gradeValidator}]"
       :undo="true"
+      :columnSorting="true"
       licenseKey="non-commercial-and-evaluation"
     ></hotTable>
     <div>CPA: {{cpa.toFixed(2)}} over {{totalCredits}} credits</div>
