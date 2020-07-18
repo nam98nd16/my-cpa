@@ -5,6 +5,8 @@
       :data="dataSource"
       :rowHeaders="false"
       :colHeaders="['Semester', 'Course ID', 'Course Title', 'Credit', 'Grade']"
+      :columns="[{data: 'semester', readOnly: true}, {data: 'courseId', readOnly: true}, {data: 'courseTitle', readOnly: true}, {data: 'courseCredit', readOnly: true}, {data: 'courseGrade', validator: gradeValidator}]"
+      :undo="true"
       licenseKey="non-commercial-and-evaluation"
     ></hotTable>
     <div>CPA: {{cpa.toFixed(2)}} over {{totalCredits}} credits</div>
@@ -74,7 +76,34 @@ export default {
       i++;
     }
   },
-  methods: {}
+  methods: {
+    gradeValidator(value, callback) {
+      if (
+        [
+          "A",
+          "A+",
+          "a",
+          "a+",
+          "B",
+          "b",
+          "B+",
+          "b+",
+          "C",
+          "c",
+          "C+",
+          "c+",
+          "D",
+          "D+",
+          "d",
+          "d+",
+          "F",
+          "f"
+        ].includes(value)
+      )
+        callback(true);
+      else callback(false);
+    }
+  }
 };
 </script>
 
