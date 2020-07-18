@@ -1,3 +1,24 @@
+let IT5030E = ["20202", "IT5030E", "Graduation Research 3", 3, ""];
+let IT5120E = ["20202", "IT5120E", "Graduation Thesis", 9, ""];
+let IT4132E = ["20201", "IT4132E", "System Program", 2, ""];
+let IT4152E = ["20201", "IT4152E", "Network Software Architecture", 2, ""];
+let IT4212E = ["20201", "IT4212E", "Realtime System", 2, ""];
+let IT4262E = ["20201", "IT4262E", "Network Security", 2, ""];
+let IT4342E = ["20201", "IT4342E", "Computer Vision", 2, ""];
+let IT4542E = ["20201", "IT4542E", "Management of Software Development", 2, ""];
+let IT4652E = ["20201", "IT4652E", "Internetworking", 2, ""];
+let IT5022E = ["20201", "IT5022E", "Graduation Research 2", 3, ""];
+let IT3402E = ["20192", "IT3402E", "Web Information System", 2, ""];
+let IT4242E = ["20192", "IT4242E", "Machine Learning and Data Mining", 2, ""];
+let IT4062E = ["20192", "IT4062E", "Network Programming", 2, ""];
+let IT5021E = ["20192", "IT5021E", "Graduation Research 1", 3, "A"];
+let IT4947E = [
+  "20192",
+  "IT4947E",
+  "ITSS Project Management for Embedded System",
+  2,
+  "A"
+];
 let IT4682E = ["20192", "IT4682E", "Multimedia Communication", 2, "A"];
 let IT4612E = ["20192", "IT4612E", "Distributed System", 2, "B+"];
 let IT4552E = ["20192", "IT4552E", "Web Programming", 2, "A"];
@@ -88,6 +109,21 @@ let FL1019 = ["20161", "FL1019", "Kỹ năng viết TA I", 2, "B"];
 let FL1016 = ["20161", "FL1016", "Kỹ năng nói TA I", 2, "B"];
 let EM1170 = ["20161", "EM1170", "Pháp luật đại cương", 2, "C+"];
 export const allCourses = {
+  IT5030E: IT5030E,
+  IT5120E: IT5120E,
+  IT4132E: IT4132E,
+  IT4152E: IT4152E,
+  IT4212E: IT4212E,
+  IT4262E: IT4262E,
+  IT4342E: IT4342E,
+  IT4542E: IT4542E,
+  IT4652E: IT4652E,
+  IT5022E: IT5022E,
+  IT3402E: IT3402E,
+  IT4242E: IT4242E,
+  IT4062E: IT4062E,
+  IT5021E: IT5021E,
+  IT4947E: IT4947E,
   IT4682E: IT4682E,
   IT4612E: IT4612E,
   IT4552E: IT4552E,
