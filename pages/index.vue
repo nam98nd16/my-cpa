@@ -4,7 +4,6 @@
     <hotTable
       :data="dataSource"
       :rowHeaders="false"
-      :allowRemoveRow="true"
       :colHeaders="['Semester', 'Course ID', 'Course Title', 'Credit', 'Grade']"
       licenseKey="non-commercial-and-evaluation"
     ></hotTable>
