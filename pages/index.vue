@@ -1,16 +1,32 @@
 <template>
-  <div style="display: flex;
-  justify-content: center;">
+  <div style="display: flex; justify-content: center">
     <hotTable
-      :data="dataSource"
+      :data="trueDataSource"
       :rowHeaders="false"
       :colHeaders="['Semester', 'Course ID', 'Course Title', 'Credit', 'Grade']"
-      :columns="[{data: 'semester', readOnly: true}, {data: 'courseId', readOnly: true}, {data: 'courseTitle', readOnly: true}, {data: 'courseCredit', readOnly: true}, {data: 'courseGrade', validator: gradeValidator}]"
+      :columns="[
+        { data: 'semester', readOnly: true },
+        { data: 'courseId', readOnly: true },
+        { data: 'courseTitle', readOnly: true },
+        { data: 'courseCredit', readOnly: true },
+        { data: 'courseGrade', validator: gradeValidator },
+      ]"
       :undo="true"
       :columnSorting="true"
       licenseKey="non-commercial-and-evaluation"
     ></hotTable>
-    <div>CPA: {{cpa.toFixed(2)}} over {{totalCredits}} credits</div>
+    <div>CPA: {{ cpa.toFixed(3) }} over {{ totalCredits }} credits</div>
+    <div>
+      <a-button
+        type="primary"
+        @click="shouldHide0CreditCourses = !shouldHide0CreditCourses"
+        >{{
+          shouldHide0CreditCourses
+            ? "Unhide 0-credit courses"
+            : "Hide 0-credit courses"
+        }}</a-button
+      >
+    </div>
   </div>
 </template>
 
@@ -23,11 +39,12 @@ export default {
     return {
       dataSource: [],
       allCourses,
-      totalCredits: 0
+      totalCredits: 0,
+      shouldHide0CreditCourses: false,
     };
   },
   components: {
-    HotTable
+    HotTable,
   },
   computed: {
     cpa() {
@@ -41,7 +58,7 @@ export default {
             ? courseCredit
             : parseInt(courseCredit);
       };
-      this.dataSource.forEach(course => {
+      this.trueDataSource.forEach((course) => {
         if (["A", "A+", "a", "a+"].includes(course.courseGrade))
           handleCourseGrade(4, course.courseCredit);
         else if (["B+", "b+"].includes(course.courseGrade))
@@ -61,7 +78,12 @@ export default {
       });
       cpa = totalGrade / this.totalCredits;
       return cpa;
-    }
+    },
+    trueDataSource() {
+      return !this.shouldHide0CreditCourses
+        ? this.dataSource
+        : this.dataSource.filter((course) => course.courseCredit);
+    },
   },
   mounted() {
     let i = 0;
@@ -71,7 +93,7 @@ export default {
         courseId: this.allCourses[course][1],
         courseTitle: this.allCourses[course][2],
         courseCredit: this.allCourses[course][3],
-        courseGrade: this.allCourses[course][4]
+        courseGrade: this.allCourses[course][4],
       };
       this.$set(this.dataSource, i, trueCourse);
       i++;
@@ -98,13 +120,13 @@ export default {
           "d",
           "d+",
           "F",
-          "f"
+          "f",
         ].includes(value)
       )
         callback(true);
       else callback(false);
-    }
-  }
+    },
+  },
 };
 </script>
 

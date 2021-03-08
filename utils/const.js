@@ -1,16 +1,22 @@
 let IT5030E = ["20202", "IT5030E", "Graduation Research 3", 3, ""];
 let IT5120E = ["20202", "IT5120E", "Graduation Thesis", 9, ""];
 let IT4132E = ["20201", "IT4132E", "System Program", 2, ""];
-let IT4152E = ["20201", "IT4152E", "Network Software Architecture", 2, ""];
-let IT4212E = ["20201", "IT4212E", "Realtime System", 2, ""];
-let IT4262E = ["20201", "IT4262E", "Network Security", 2, ""];
-let IT4342E = ["20201", "IT4342E", "Computer Vision", 2, ""];
-let IT4542E = ["20201", "IT4542E", "Management of Software Development", 2, "B+"];
-let IT4652E = ["20201", "IT4652E", "Internetworking", 2, ""];
-let IT5022E = ["20201", "IT5022E", "Graduation Research 2", 3, ""];
-let IT3402E = ["20192", "IT3402E", "Web Information System", 2, ""];
-let IT4242E = ["20192", "IT4242E", "Machine Learning and Data Mining", 2, ""];
-let IT4062E = ["20192", "IT4062E", "Network Programming", 2, ""];
+let IT4152E = ["20201", "IT4152E", "Network Software Architecture", 2, "B"];
+let IT4212E = ["20201", "IT4212E", "Realtime System", 2, "A"];
+let IT4262E = ["20201", "IT4262E", "Network Security", 2, "A+"];
+let IT4342E = ["20201", "IT4342E", "Computer Vision", 2, "A+"];
+let IT4542E = [
+  "20201",
+  "IT4542E",
+  "Management of Software Development",
+  2,
+  "B+"
+];
+let IT4652E = ["20201", "IT4652E", "Internetworking", 2, "B+"];
+let IT5022E = ["20201", "IT5022E", "Graduation Research 2", 3, "A"];
+let IT3402E = ["20192", "IT3402E", "Web Information System", 2, "B"];
+let IT4242E = ["20192", "IT4242E", "Machine Learning and Data Mining", 2, "B+"];
+let IT4062E = ["20192", "IT4062E", "Network Programming", 2, "B"];
 let IT5021E = ["20192", "IT5021E", "Graduation Research 1", 3, "A"];
 let IT4947E = [
   "20192",
