@@ -40,7 +40,7 @@ export default {
       dataSource: [],
       allCourses,
       totalCredits: 0,
-      shouldHide0CreditCourses: false,
+      shouldHide0CreditCourses: true,
     };
   },
   components: {
