@@ -1,32 +1,53 @@
 <template>
-  <div style="display: flex; justify-content: center">
-    <hotTable
-      :data="trueDataSource"
-      :rowHeaders="false"
-      :colHeaders="['Semester', 'Course ID', 'Course Title', 'Credit', 'Grade']"
-      :columns="[
-        { data: 'semester', readOnly: true },
-        { data: 'courseId', readOnly: true },
-        { data: 'courseTitle', readOnly: true },
-        { data: 'courseCredit', readOnly: true },
-        { data: 'courseGrade', validator: gradeValidator },
-      ]"
-      :undo="true"
-      :columnSorting="true"
-      licenseKey="non-commercial-and-evaluation"
-    ></hotTable>
-    <div>CPA: {{ cpa.toFixed(3) }} over {{ totalCredits }} credits</div>
-    <div>
-      <a-button
-        type="primary"
-        @click="shouldHide0CreditCourses = !shouldHide0CreditCourses"
-        >{{
-          shouldHide0CreditCourses
-            ? "Unhide 0-credit courses"
-            : "Hide 0-credit courses"
-        }}</a-button
-      >
-    </div>
+  <div>
+    <a-row>
+      <a-col :md="12" :xs="24"
+        ><hotTable
+          :data="trueDataSource"
+          :rowHeaders="false"
+          :colHeaders="[
+            'Semester',
+            'Course ID',
+            'Course Title',
+            'Credit',
+            'Grade',
+          ]"
+          :columns="[
+            { data: 'semester', readOnly: true },
+            { data: 'courseId', readOnly: true },
+            { data: 'courseTitle', readOnly: true },
+            { data: 'courseCredit', readOnly: true },
+            { data: 'courseGrade', validator: gradeValidator },
+          ]"
+          :undo="true"
+          :columnSorting="true"
+          licenseKey="non-commercial-and-evaluation"
+        ></hotTable
+      ></a-col>
+      <a-col :md="6" :xs="24">
+        <div>
+          <a-button
+            type="primary"
+            @click="shouldHide0CreditCourses = !shouldHide0CreditCourses"
+            >{{
+              shouldHide0CreditCourses
+                ? "Unhide 0-credit courses"
+                : "Hide 0-credit courses"
+            }}</a-button
+          >
+        </div>
+        <div style="margin-top: 5px">
+          <a-input-number :min="2" :max="10" v-model="numOfDecimalDigits" />
+          decimal digits
+        </div>
+      </a-col>
+      <a-col :md="6" :xs="24">
+        <div>
+          CPA: {{ cpa.toFixed(numOfDecimalDigits) }} over
+          {{ totalCredits }} credits
+        </div>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
@@ -41,6 +62,7 @@ export default {
       allCourses,
       totalCredits: 0,
       shouldHide0CreditCourses: true,
+      numOfDecimalDigits: 2,
     };
   },
   components: {
