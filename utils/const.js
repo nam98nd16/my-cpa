@@ -1,6 +1,6 @@
 let IT5030E = ["20202", "IT5030E", "Graduation Research 3", 3, ""];
 let IT5120E = ["20202", "IT5120E", "Graduation Thesis", 9, ""];
-let IT4132E = ["20201", "IT4132E", "System Program", 2, ""];
+let IT4132E = ["20201", "IT4132E", "System Program", 2, "A"];
 let IT4152E = ["20201", "IT4152E", "Network Software Architecture", 2, "B"];
 let IT4212E = ["20201", "IT4212E", "Realtime System", 2, "A"];
 let IT4262E = ["20201", "IT4262E", "Network Security", 2, "A+"];
